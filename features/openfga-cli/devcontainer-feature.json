@@ -1,0 +1,27 @@
+{
+  "id": "openfga-cli",
+  "version": "1.0.0",
+  "description": "Install the OpenFGA CLI",
+  "options": {
+    "version": {
+      "type": "string",
+      "description": "The version of the OpenFGA CLI to install",
+      "default": "0.4.0"
+    },
+    "arch": {
+      "type": "string",
+      "description": "The architecture to install the OpenFGA CLI for (amd64, arm64)",
+      "enum": ["amd64", "arm64"],
+      "default": "arm64"
+    },
+    "extension": {
+      "type": "string",
+      "description": "The file extension to use for the OpenFGA CLI (apk, deb, rpm)",
+      "enum": ["apk", "deb", "rpm"],
+      "default": "deb"
+    }
+  },
+  "install": {
+    "script": "install.sh"
+  }
+}
