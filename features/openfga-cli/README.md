@@ -1,39 +1,26 @@
-# OpenFGA CLI DevContainer Feature
 
-This DevContainer feature installs the OpenFGA CLI. You can specify the version, architecture, and file extension for the installation.
+# OpenFGA CLI (openfga-cli)
 
-## Usage
+Install the OpenFGA CLI
 
-To use this feature in your DevContainer, add it to your `.devcontainer/devcontainer.json` configuration file and specify the desired options.
-
-### Example
+## Example Usage
 
 ```json
 "features": {
-  "ghcr.io/partydrone/devcontainer/features/openfga-cli": {}
+    "ghcr.io/partydrone/devcontainer/features/openfga-cli:0": {}
 }
 ```
 
 ## Options
 
-| Option       | Description                                        | Default | Values                                    |
-|--------------|----------------------------------------------------|---------|-------------------------------------------|
-| **version**  | The version of the OpenFGA CLI to install          | `0.4.0` | Any valid OpenFGA CLI version             |
-| **arch**     | The architecture to install for                    | `arm64` | `amd64`, `arm64`                          |
-| **extension** | The file extension of the package to install      | `deb`   | `apk`, `deb`, `rpm`                       |
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | The version of the OpenFGA CLI to install | string | 0.4.0 |
+| arch | The architecture to install the OpenFGA CLI for (amd64, arm64) | string | arm64 |
+| extension | The file extension to use for the OpenFGA CLI (apk, deb, rpm) | string | deb |
 
-## Installation Script
 
-The `install.sh` script handles the installation process. It constructs the download URL based on the provided options and downloads the OpenFGA CLI. The script supports various file extensions and performs the necessary installation steps accordingly.
 
-## Verifying Installation
+---
 
-After the installation, the script verifies the installation by running the openfga version command.
-
-## Contributing
-
-If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License.
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/partydrone/devcontainer/blob/main/features/openfga-cli/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
