@@ -16,13 +16,13 @@ curl -L $DOWNLOAD_URL -o fga.${EXTENSION}
 # Handle different file extensions
 case $EXTENSION in
   "apk")
-    apk add --allow-untrusted fga.${EXTENSION}
+    apk add --allow-untrusted ./fga.${EXTENSION}
     ;;
   "deb")
-    apt install fga.${EXTENSION}
+    apt install ./fga.${EXTENSION}
     ;;
   "rpm")
-    dnf install fga.${EXTENSION}
+    dnf install ./fga.${EXTENSION}
     ;;
   *)
     echo "Unsupported file extension: $EXTENSION"
@@ -31,7 +31,7 @@ case $EXTENSION in
 esac
 
 # Clean up
-rm fga.${EXTENSION}
+rm ./fga.${EXTENSION}
 
 # Verify the installation
 fga --version
