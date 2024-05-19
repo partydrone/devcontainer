@@ -8,21 +8,21 @@ set -e
 VERSION=${VERSION:-"0.4.0"}
 ARCH=${ARCH:-"arm64"}
 EXTENSION=${EXTENSION:-"deb"}
-DOWNLOAD_URL="https://github.com/openfga/cli/releases/download/v${VERSION}/openfga-cli_${VERSION}_linux_${ARCH}.${EXTENSION}"
+DOWNLOAD_URL="https://github.com/openfga/cli/releases/download/v${VERSION}/fga_${VERSION}_linux_${ARCH}.${EXTENSION}"
 
 # Download and install the OpenFGA CLI
-curl -L $DOWNLOAD_URL -o openfga-cli.${EXTENSION}
+curl -L $DOWNLOAD_URL -o fga.${EXTENSION}
 
 # Handle different file extensions
 case $EXTENSION in
   "apk")
-    apk add --allow-untrusted openfga-cli.${EXTENSION}
+    apk add --allow-untrusted fga.${EXTENSION}
     ;;
   "deb")
-    apt install openfga-cli.${EXTENSION}
+    apt install fga.${EXTENSION}
     ;;
   "rpm")
-    dnf install openfga-cli.${EXTENSION}
+    dnf install fga.${EXTENSION}
     ;;
   *)
     echo "Unsupported file extension: $EXTENSION"
@@ -31,7 +31,7 @@ case $EXTENSION in
 esac
 
 # Clean up
-rm openfga-cli.${EXTENSION}
+rm fga.${EXTENSION}
 
 # Verify the installation
 fga --version
