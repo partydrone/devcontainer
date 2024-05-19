@@ -9,16 +9,8 @@ To use this feature in your DevContainer, add it to your `.devcontainer/devconta
 ### Example
 
 ```json
-{
-    "name": "My Dev Container",
-    "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
-    "features": {
-        "openfga-cli": {
-            "version": "0.4.0",
-            "architecture": "amd64",
-            "extension": "tar.gz"
-        }
-    }
+"features": {
+  "ghcr.io/partydrone/devcontainer/features/openfga-cli": {}
 }
 ```
 
