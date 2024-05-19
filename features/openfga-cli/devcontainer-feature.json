@@ -20,8 +20,5 @@
       "enum": ["apk", "deb", "rpm"],
       "default": "deb"
     }
-  },
-  "install": {
-    "script": "install.sh"
   }
 }
